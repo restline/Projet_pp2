@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="victhicompany.restline.Main">
+
+    <FrameLayout
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="17dp"
+        android:layout_width="170dp"
+        android:layout_height="170dp"
+        android:id="@+id/frameLayout">
+
+        <ImageView
+            android:id="@+id/imageView4"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="2dp"
+            app:srcCompat="@mipmap/logo" />
+    </FrameLayout>
+
+    <EditText
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:ems="10"
+        android:id="@+id/idLogin"
+        android:textAllCaps="true"
+        android:textAlignment="center"
+        android:layout_above="@+id/idMdp"
+        android:layout_alignStart="@+id/idMdp"
+        android:layout_marginBottom="49dp" />
+
+    <TextView
+        android:text="Adresse mail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/idLogin"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="11dp"
+        android:textAllCaps="true"
+        android:textAlignment="center"
+        android:id="@+id/txtLogin" />
+
+    <TextView
+        android:text="Mot de passe"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true"
+        android:id="@+id/txtMdp"
+        android:textAllCaps="true"
+        android:textAlignment="center" />
+
+    <EditText
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:inputType="textPassword"
+        android:ems="10"
+        android:id="@+id/idMdp"
+        android:textAllCaps="false"
+        android:textAlignment="center"
+        android:layout_below="@+id/txtMdp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="7dp" />
+
+    <FrameLayout
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:layout_below="@+id/idAnnuler"
+        android:layout_alignEnd="@+id/frameLayout"
+        android:layout_marginTop="26dp">
+
+        <ProgressBar
+            android:id="@+id/progressBar"
+            style="?android:attr/progressBarStyle"
+            android:layout_width="59dp"
+            android:layout_height="wrap_content" />
+    </FrameLayout>
+
+    <Button
+        android:text="Connexion"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/idSeConnecter"
+        android:layout_marginTop="21dp"
+        android:layout_below="@+id/idMdp"
+        android:layout_centerHorizontal="true"
+
+        />
+
+    <Button
+        android:text="Annuler"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/idAnnuler"
+        android:layout_marginTop="10dp"
+        android:layout_below="@+id/idCheckLogin"
+        android:layout_centerHorizontal="true" />
+
+    <CheckBox
+        android:text="Mémoriser"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/idCheckLogin"
+        android:layout_alignBaseline="@+id/idSeConnecter"
+        android:layout_alignBottom="@+id/idSeConnecter"
+        android:layout_toStartOf="@+id/frameLayout5" />
+
+</RelativeLayout>
