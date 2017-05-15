@@ -16,16 +16,16 @@ public class VueAccueil extends JPanel implements ActionListener
 
 	
 	public  VueAccueil(Profil unProfil) {
-		this.setBounds(50, 50, 300, 200);
+		this.setBounds(50, 50, 220, 150);
 		this.setLayout(null);
-		this.setBackground(Color.CYAN);
-		this.txtInfos.setBounds(30, 30, 150, 150);
+		this.setBackground(new Color(102, 153, 204));
+		this.txtInfos.setBounds(35, 15, 150, 120);
 		this.txtInfos.setEditable(false); //edition non disponible
 		
-		String infos ="\n ----------------------\n";
-		infos +="\nNom : "+unProfil.getNom();
-		infos += "\nPrénoms : "+unProfil.getPrenom();
-		infos += "\nEmail : "+unProfil.getEmail();
+		String infos ="\n-----------------------------\n";
+		infos +="\n Nom : "+unProfil.getNom();
+		infos += "\n Prénoms : "+unProfil.getPrenom();
+		infos += "\n Email : "+unProfil.getEmail();
 		infos += "\n-----------------------------\n";
 		this.txtInfos.setText(infos);
 		this.add(this.txtInfos);

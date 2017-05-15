@@ -23,13 +23,13 @@ public class VueReservation extends JPanel implements ActionListener, MouseListe
 	
 	public VueReservation()
 	{
-		this.setBounds(50, 50, 650, 250); //fenetre restaurant (margin-left,margin top, longueur, largeur)
+		this.setBounds(50, 50, 622, 250); //fenetre restaurant (margin-left,margin top, longueur, largeur)
 		this.setLayout(null); //pas de photo
-		this.setBackground(new Color(102, 153, 204)); //couleur bleu marine
-		this.lbTitre.setBounds(150, 10, 200, 10); //placement titre
+		this.setBackground(new Color(130, 196, 108)); //couleur bleu marine
+		this.lbTitre.setBounds(250, 10, 200, 10); //placement titre
 		this.add(this.lbTitre); //ajout titre
 		
-		String entete [] = {"id", "date_heure", "nombre de personnes", "statut"};
+		String entete [] = {"id", "date", "nombre de personnes", "statut"};
 		
 		this.tableReservations = new JTable(this.extraireReservations(), entete); //creation tableaux
 		JScrollPane uneScroll = new JScrollPane(tableReservations);

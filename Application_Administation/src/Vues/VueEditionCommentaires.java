@@ -28,12 +28,12 @@ public class VueEditionCommentaires extends JPanel implements ActionListener
 	private JLabel txtC = new JLabel(" Texte du commentaire ");
 	private JLabel idClt = new JLabel(" Numeros du client ");
 	
-	private JButton btSupprimer = new JButton(new ImageIcon("src/Images/supprimer.jpg"));
+	private JButton btSupprimer = new JButton(new ImageIcon("src/Images/annuler.png"));
 	private JButton rafraichir = new JButton("rafraichir");
 	
 	public VueEditionCommentaires()
 	{
-		this.setBounds(10, 320, 725, 200);	//('', '','largeur', 'longeur')
+		this.setBounds(10, 320, 725, 170);	//('', '','largeur', 'longeur')
 		this.setLayout(null);
 		this.setBackground(new Color(131, 166, 151));//colonne - ligne
 		
@@ -41,6 +41,7 @@ public class VueEditionCommentaires extends JPanel implements ActionListener
 		idCo.setBounds(20, 40, 100, 20);
 		this.add(this.idCo);
 		idCom.setBounds(140, 40, 100, 20);
+		idCom.setEditable(false);
 		this.add(this.idCom);
 		
 		autC.setBounds(260, 40, 100, 20);
@@ -64,6 +65,8 @@ public class VueEditionCommentaires extends JPanel implements ActionListener
 		this.add(this.idClient);
 		
 		btSupprimer.setBounds(20, 120, 40, 30);
+		btSupprimer.setContentAreaFilled(false);
+        btSupprimer.setBorderPainted(false);
 		this.add(this.btSupprimer);
 		
 		

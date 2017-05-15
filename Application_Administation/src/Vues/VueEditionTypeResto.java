@@ -26,16 +26,16 @@ public class VueEditionTypeResto extends JPanel implements ActionListener
 	private JLabel catP = new JLabel("catégorie du prix");
 	private JLabel nbE = new JLabel("nombre d'étoile");
 	
-	private JButton btMJ = new JButton(new ImageIcon("src/Images/mj.jpg"));
-	private JButton btSupprimer = new JButton(new ImageIcon("src/Images/supprimer.jpg"));
-	private JButton btinserer = new JButton(new ImageIcon("src/Images/ajouter.jpg"));
+	private JButton btMJ = new JButton(new ImageIcon("src/Images/update.png"));
+	private JButton btSupprimer = new JButton(new ImageIcon("src/Images/annuler.png"));
+	private JButton btinserer = new JButton(new ImageIcon("src/Images/valider.png"));
 	private JButton btnRafraichir = new JButton("rafraichir");
 	
 	public VueEditionTypeResto()
 	{
-		this.setBounds(7, 320, 730, 225);	//('', '','largeur', 'longeur')
+		this.setBounds(7, 320, 730, 170);	//('', '','largeur', 'longeur')
 		this.setLayout(null);
-		this.setBackground(new Color(102, 153, 204));//colonne - ligne
+		this.setBackground(new Color(131, 166, 151));//colonne - ligne
 		
 		idTR.setBounds(20, 40, 100, 20);
 		this.add(this.idTR);
@@ -65,12 +65,18 @@ public class VueEditionTypeResto extends JPanel implements ActionListener
 		this.add(this.btMJ);
 		btSupprimer.setBounds(120, 120, 40, 30);
 		this.add(this.btSupprimer);
-		this.btnRafraichir.setBounds(520, 120, 100, 20);
-		this.add(this.btnRafraichir);
+		//this.btnRafraichir.setBounds(520, 120, 100, 20);
+		//this.add(this.btnRafraichir);
 		
 		this.btMJ.addActionListener(this);
+		btMJ.setContentAreaFilled(false);
+        btMJ.setBorderPainted(false);
 		this.btSupprimer.addActionListener(this);
+		btSupprimer.setContentAreaFilled(false);
+        btSupprimer.setBorderPainted(false);
 		this.btinserer.addActionListener(this);
+		btinserer.setContentAreaFilled(false);
+        btinserer.setBorderPainted(false);
 		this.btnRafraichir.addActionListener(this);
 		this.setVisible(false);
 	}

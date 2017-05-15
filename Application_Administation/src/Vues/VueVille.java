@@ -26,8 +26,8 @@ public class VueVille extends JPanel implements ActionListener, MouseListener
 	{
 		this.setBounds(50, 50, 650, 250); //fenetre ville (margin-left,margin top, longueur, largeur)
 		this.setLayout(null); //pas de photo
-		this.setBackground(new Color(102, 153, 204)); //couleur bleu marine
-		this.lbTitre.setBounds(150, 10, 200, 10); //placement titre
+		this.setBackground(new Color(130, 196, 108)); //couleur bleu marine
+		this.lbTitre.setBounds(250, 10, 200, 10); //placement titre
 		this.add(this.lbTitre); //ajout titre
 		
 		//entete tableau

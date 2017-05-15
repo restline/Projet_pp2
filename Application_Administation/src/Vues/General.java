@@ -7,7 +7,9 @@ import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+import javax.swing.ImageIcon;
 import javax.swing.JFrame;
+import javax.swing.JLabel;
 import javax.swing.JMenu;
 import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
@@ -52,6 +54,7 @@ public class General extends JFrame implements ActionListener
 	private VueVille uneVueVille;
 	private VueRegion uneVueRegion;
 	private VueCommentaires uneVueCommentaires;
+	private VueAPropos uneVueAPropos;
 	
 	//les vue pour l'edition du tableau
 	private VueEditionParticulier uneVueEditionParticulier;
@@ -70,19 +73,9 @@ public class General extends JFrame implements ActionListener
 	{
 		this.setTitle("Menu Administration");
 		this.setLayout(null);
-		this.setBounds(200, 200, 750, 600);
-		this.img = Toolkit.getDefaultToolkit().getImage("src/Images/Resto.jpg");
+		this.setBounds(200, 100, 750, 600);
+		//this.img = Toolkit.getDefaultToolkit().getImage("src/Images/Resto.jpg");
 		this.uneBarre.setBackground(new Color(102, 153, 204));
-		this.itemListerReservation.setBackground(new Color(87, 173, 104));
-		this.itemApropos.setBackground(new Color(87, 173, 104));
-		this.itemLister.setBackground(new Color(87, 173, 104));
-		this.itemListerRestaurant.setBackground(new Color(87, 173, 104));
-		this.itemQuitter.setBackground(new Color(87, 173, 104));
-		this.itemRegion.setBackground(new Color(87, 173, 104));
-		this.itemTypeResto.setBackground(new Color(87, 173, 104));
-		this.itemVille.setBackground(new Color(87, 173, 104));
-		this.itemListerReservation.setBackground(new Color(87, 173, 104));
-		this.itemCommentaires.setBackground(new Color(87, 173, 104));
 		
 		 
 		this.setResizable(false);
@@ -138,6 +131,8 @@ public class General extends JFrame implements ActionListener
 		this.uneVueEditionCommentaires = new VueEditionCommentaires();
 		this.add(this.uneVueEditionCommentaires);
 		
+		this.uneVueAPropos = new VueAPropos();
+		this.add(this.uneVueAPropos);
 		
 		this.mnFichier.add(itemQuitter);
 		
@@ -180,8 +175,12 @@ public class General extends JFrame implements ActionListener
 		this.itemVille.addActionListener(this);
 		this.itemRegion.addActionListener(this);
 		this.itemCommentaires.addActionListener(this);
+		this.itemApropos.addActionListener(this);
 		
-	
+		ImageIcon icon = new ImageIcon("src/Images/Resto.jpg");
+		JLabel l = new JLabel(icon);
+		l.setBounds(0, 0,750, 600);	
+		this.getContentPane().add(l);
 		this.setVisible(true);
 	}
 
@@ -189,12 +188,33 @@ public class General extends JFrame implements ActionListener
 	public void actionPerformed(ActionEvent e) {
 		 if(e.getSource()==this.itemQuitter) //si on cliquer sur l'onglet quitter
 		 {
-			 int retour = JOptionPane.showConfirmDialog(this, "Voulez-vous quitter ?",
+			 int retour = JOptionPane.showConfirmDialog(this, "Voulez-vous quitter l'administration de Restline?",
 					 "Quitter", JOptionPane.ERROR_MESSAGE);
 			 if (retour ==0) //kill la fenêtre
 			 {
 				 this.dispose();
 			 }
+		 }
+		 else if (e.getSource() == this.itemApropos)
+		 {
+			 this.uneVueAccueil.setVisible(false);
+			 this.uneVueReservation.setVisible(false);
+			 this.uneVueRestaurant.setVisible(false);
+			 this.uneVueTypeResto.setVisible(false);
+			 this.uneVueVille.setVisible(false);
+			 this.uneVueRegion.setVisible(false);
+			 this.uneVueProfessionnel.setVisible(false);
+			 this.uneVueEditionProfessionnel.setVisible(false);
+			 this.uneVueEditionRestaurant.setVisible(false);
+			 this.uneVueEditionReservation.setVisible(false);
+			 this.uneVueEditionTypeResto.setVisible(false);
+			 this.uneVueEditionVille.setVisible(false);
+			 this.uneVueEditionRegion.setVisible(false);
+			 this.uneVueCommentaires.setVisible(false);
+			 this.uneVueEditionCommentaires.setVisible(false);
+			 this.uneVueParticulier.setVisible(false);
+			 this.uneVueEditionParticulier.setVisible(false);
+			 this.uneVueAPropos.setVisible(true);
 		 }
 		 else if (e.getSource()==this.itemLister) 
 		 {
@@ -213,6 +233,7 @@ public class General extends JFrame implements ActionListener
 			 this.uneVueEditionRegion.setVisible(false);
 			 this.uneVueCommentaires.setVisible(false);
 			 this.uneVueEditionCommentaires.setVisible(false);
+			 this.uneVueAPropos.setVisible(false);
 			 this.uneVueParticulier.setVisible(true);
 			 this.uneVueEditionParticulier.setVisible(true);
 			 
@@ -233,6 +254,9 @@ public class General extends JFrame implements ActionListener
 			 this.uneVueEditionRegion.setVisible(false);
 			 this.uneVueCommentaires.setVisible(false);
 			 this.uneVueEditionCommentaires.setVisible(false);
+			 this.uneVueParticulier.setVisible(false);
+			 this.uneVueEditionParticulier.setVisible(false);
+			 this.uneVueAPropos.setVisible(false);
 			 this.uneVueProfessionnel.setVisible(true);
 			 this.uneVueEditionProfessionnel.setVisible(true);
 		 }
@@ -272,6 +296,7 @@ public class General extends JFrame implements ActionListener
 			 this.uneVueEditionRegion.setVisible(false);
 			 this.uneVueCommentaires.setVisible(false);
 			 this.uneVueEditionCommentaires.setVisible(false);
+			 this.uneVueAPropos.setVisible(false);
 			 this.uneVueReservation.setVisible(true);
 			 this.uneVueEditionReservation.setVisible(true);
 		 }
@@ -292,6 +317,7 @@ public class General extends JFrame implements ActionListener
 			 this.uneVueEditionRegion.setVisible(false);
 			 this.uneVueCommentaires.setVisible(false);
 			 this.uneVueEditionCommentaires.setVisible(false);
+			 this.uneVueAPropos.setVisible(false);
 			 this.uneVueTypeResto.setVisible(true);
 			 this.uneVueEditionTypeResto.setVisible(true);
 		 }
@@ -312,6 +338,7 @@ public class General extends JFrame implements ActionListener
 			 this.uneVueEditionRegion.setVisible(false);
 			 this.uneVueCommentaires.setVisible(false);
 			 this.uneVueEditionCommentaires.setVisible(false);
+			 this.uneVueAPropos.setVisible(false);
 			 this.uneVueVille.setVisible(true);
 			 this.uneVueEditionVille.setVisible(true);
 		 }
@@ -332,6 +359,7 @@ public class General extends JFrame implements ActionListener
 			 this.uneVueEditionVille.setVisible(false);
 			 this.uneVueCommentaires.setVisible(false);
 			 this.uneVueEditionCommentaires.setVisible(false);
+			 this.uneVueAPropos.setVisible(false);
 			 this.uneVueRegion.setVisible(true);
 			 this.uneVueEditionRegion.setVisible(true);
 			 
@@ -354,6 +382,7 @@ public class General extends JFrame implements ActionListener
 			 this.uneVueEditionVille.setVisible(false);
 			 this.uneVueRegion.setVisible(false);
 			 this.uneVueEditionRegion.setVisible(false);
+			 this.uneVueAPropos.setVisible(false);
 			 this.uneVueCommentaires.setVisible(true);
 			 this.uneVueEditionCommentaires.setVisible(true);
 		 }

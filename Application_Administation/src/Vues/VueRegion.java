@@ -24,10 +24,10 @@ public class VueRegion extends JPanel implements ActionListener, MouseListener
 	
 	public VueRegion()
 	{
-		this.setBounds(50, 50, 650, 250); //fenetre restaurant (margin-left,margin top, longueur, largeur)
+		this.setBounds(50, 50, 622, 250); //fenetre restaurant (margin-left,margin top, longueur, largeur)
 		this.setLayout(null); //pas de photo
-		this.setBackground(new Color(102, 153, 204)); //couleur bleu marine
-		this.lbTitre.setBounds(150, 10, 200, 10); //placement titre
+		this.setBackground(new Color(130, 196, 108)); //couleur bleu marine
+		this.lbTitre.setBounds(250, 10, 200, 10); //placement titre
 		this.add(this.lbTitre); //ajout titre
 		
 		//entete tableau

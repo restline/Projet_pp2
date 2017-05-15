@@ -41,14 +41,14 @@ public class VueEditionParticulier extends JPanel implements ActionListener
 	private JLabel Pre = new JLabel(" Prenom ");
 	
 	
-	private JButton btMJ = new JButton(new ImageIcon("src/Images/ajouter.jpg"));
-	private JButton btSupprimer = new JButton(new ImageIcon("src/Images/supprimer.jpg"));
+	private JButton btMJ = new JButton(new ImageIcon("src/Images/valider.png"));
+	private JButton btSupprimer = new JButton(new ImageIcon("src/Images/annuler.png"));
 	
 	public VueEditionParticulier()
 	{
 		this.setBounds(10, 320, 725, 200);	//('', '','largeur', 'longeur')
 		this.setLayout(null);
-		this.setBackground(new Color(102, 153, 204));//colonne - ligne
+		this.setBackground(new Color(131, 166, 151));//colonne - ligne
 		
 	
 		nomC.setBounds(20, 40, 100, 20);
@@ -93,8 +93,12 @@ public class VueEditionParticulier extends JPanel implements ActionListener
 		
 	
 		btMJ.setBounds(20, 165, 40, 30);
+		btMJ.setContentAreaFilled(false);
+        btMJ.setBorderPainted(false);
 		this.add(this.btMJ);
 		btSupprimer.setBounds(70, 165, 40, 30);
+		btSupprimer.setContentAreaFilled(false);
+        btSupprimer.setBorderPainted(false);
 		this.add(this.btSupprimer);
 		
 		this.btMJ.addActionListener(this);

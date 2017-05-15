@@ -22,10 +22,10 @@ public class VueParticulier extends JPanel implements ActionListener, MouseListe
 	
 	public VueParticulier()
 	{
-		this.setBounds(50, 50, 650, 250);
+		this.setBounds(50, 50, 622, 250);
 		this.setLayout(null);
-		this.setBackground(new Color(208, 210, 213));
-		this.lbTitre.setBounds(150, 10, 200, 10);
+		this.setBackground(new Color(130, 196, 108));
+		this.lbTitre.setBounds(250, 10, 200, 10);
 		this.add(this.lbTitre);
 		
 		//construction de la Jtable 

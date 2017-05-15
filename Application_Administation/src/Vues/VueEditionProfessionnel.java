@@ -41,14 +41,14 @@ public class VueEditionProfessionnel extends JPanel implements ActionListener
 	private JLabel nC = new JLabel(" Nom du Contact ");
 	private JLabel pC = new JLabel(" Prenom du Contact ");
 	
-	private JButton btMJ = new JButton(new ImageIcon("src/Images/ajouter.jpg"));
-	private JButton btSupprimer = new JButton(new ImageIcon("src/Images/supprimer.jpg"));
+	private JButton btMJ = new JButton(new ImageIcon("src/Images/valider.png"));
+	private JButton btSupprimer = new JButton(new ImageIcon("src/Images/annuler.png"));
 	
 	public VueEditionProfessionnel()
 	{
 		this.setBounds(10, 320, 725, 225);	//('', '','largeur', 'longeur')
 		this.setLayout(null);
-		this.setBackground(new Color(102, 153, 204));//colonne - ligne
+		this.setBackground(new Color(131, 166, 151));//colonne - ligne
 		
 	
 		nomC.setBounds(20, 40, 100, 20);
@@ -102,8 +102,12 @@ public class VueEditionProfessionnel extends JPanel implements ActionListener
 		this.add(this.prenomContact);
 		
 		btMJ.setBounds(20, 192, 40, 30);
+		btMJ.setContentAreaFilled(false);
+        btMJ.setBorderPainted(false);
 		this.add(this.btMJ);
 		btSupprimer.setBounds(70, 192, 40, 30);
+		btSupprimer.setContentAreaFilled(false); //efface le contenue du champs autour de l'image
+        btSupprimer.setBorderPainted(false); //efface les bords
 		this.add(this.btSupprimer);
 		
 		this.btMJ.addActionListener(this);

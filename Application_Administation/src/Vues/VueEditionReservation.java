@@ -27,14 +27,14 @@ public class VueEditionReservation  extends JPanel implements ActionListener
 	private JLabel nbP = new JLabel("nombre de personne");
 	private JLabel st = new JLabel("Statut");
 	
-	private JButton btMJ = new JButton(new ImageIcon("src/Images/mj.jpg"));
-	private JButton btSupprimer = new JButton(new ImageIcon("src/Images/supprimer.jpg"));
+	private JButton btMJ = new JButton(new ImageIcon("src/Images/update.png"));
+	private JButton btSupprimer = new JButton(new ImageIcon("src/Images/annuler.png"));
 	
 	public VueEditionReservation()
 	{
-		this.setBounds(7, 320, 730, 225);	//('', '','largeur', 'longeur')
+		this.setBounds(7, 320, 730, 130);	//('', '','largeur', 'longeur')
 		this.setLayout(null);
-		this.setBackground(new Color(102, 153, 204));//colonne - ligne
+		this.setBackground(new Color(131, 166, 151));//colonne - ligne
 		
 		idR.setBounds(20, 40, 100, 20);
 		this.add(this.idR);
@@ -49,7 +49,7 @@ public class VueEditionReservation  extends JPanel implements ActionListener
 		
 		st.setBounds(500, 40, 100, 20);
 		this.add(this.st);
-		statut.setBounds(620, 40, 100, 20);
+		statut.setBounds(570, 40, 100, 20);
 		this.add(this.statut);
 		
 
@@ -59,7 +59,11 @@ public class VueEditionReservation  extends JPanel implements ActionListener
 		this.add(this.btSupprimer);
 		
 		this.btMJ.addActionListener(this);
+		btMJ.setContentAreaFilled(false);
+        btMJ.setBorderPainted(false);
 		this.btSupprimer.addActionListener(this);
+		btSupprimer.setContentAreaFilled(false);
+        btSupprimer.setBorderPainted(false);
 		this.setVisible(false);
 	}
 	

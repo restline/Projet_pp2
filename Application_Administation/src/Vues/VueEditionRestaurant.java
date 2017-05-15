@@ -43,15 +43,15 @@ public class VueEditionRestaurant  extends JPanel implements ActionListener
 	private JLabel idTR = new JLabel("Type du restaurant");
 	private JLabel cpV = new JLabel("code postal de la ville du restaurant");
 	
-	private JButton btMJ = new JButton(new ImageIcon("src/Images/mj.jpg"));
-	private JButton btSupprimer = new JButton(new ImageIcon("src/Images/supprimer.jpg"));
-	private JButton btinserer = new JButton(new ImageIcon("src/Images/ajouter.jpg"));
+	private JButton btMJ = new JButton(new ImageIcon("src/Images/update.png"));
+	private JButton btSupprimer = new JButton(new ImageIcon("src/Images/annuler.png"));
+	private JButton btinserer = new JButton(new ImageIcon("src/Images/valider.png"));
 	
 	public VueEditionRestaurant()
 	{
 		this.setBounds(7, 320, 730, 225);	//('', '','largeur', 'longeur')
 		this.setLayout(null);
-		this.setBackground(new Color(102, 153, 204));//colonne - ligne
+		this.setBackground(new Color(131, 166, 151));//colonne - ligne
 		
 		idR.setBounds(20, 40, 100, 20);
 		this.add(this.idR);
@@ -117,8 +117,14 @@ public class VueEditionRestaurant  extends JPanel implements ActionListener
 		this.add(this.btSupprimer);
 		
 		this.btMJ.addActionListener(this);
+		btMJ.setContentAreaFilled(false);
+        btMJ.setBorderPainted(false);
 		this.btSupprimer.addActionListener(this);
+		btSupprimer.setContentAreaFilled(false);
+        btSupprimer.setBorderPainted(false);
 		this.btinserer.addActionListener(this);
+		btinserer.setContentAreaFilled(false);
+        btinserer.setBorderPainted(false);
 		this.setVisible(false);
 		
 	}
