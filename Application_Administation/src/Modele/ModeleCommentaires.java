@@ -16,7 +16,7 @@ public class ModeleCommentaires
 		
 		try
 		{
-			BDD uneBDD = new BDD("mysql.hostinger.fr", "u587264972_rest", "u587264972_rest", "ProjetPPE_1/");
+			BDD uneBDD = new BDD("localhost", "restline", "root", "");
 			uneBDD.seConnecter();
 			Statement unStat = uneBDD.getMaconnexion().createStatement(); //créer une instance connexion
 			ResultSet unRes = unStat.executeQuery(requete); //éxécute requête
@@ -50,7 +50,7 @@ public class ModeleCommentaires
 		
 		try
 		{
-			BDD uneBDD = new BDD("mysql.hostinger.fr", "u587264972_rest", "u587264972_rest", "ProjetPPE_1/");
+			BDD uneBDD = new BDD("localhost", "restline", "root", "");
 			uneBDD.seConnecter();
 			Statement unStat = uneBDD.getMaconnexion().createStatement();
 			unStat.execute(requete);

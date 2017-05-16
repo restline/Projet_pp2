@@ -43,8 +43,7 @@ public class BDD {
 		}
 		catch(SQLException exp)
 		{
-			System.out.println("Erreur de la connexion a " + url);
-			exp.printStackTrace();
+			System.out.println("Erreur de la connexion a" + url);
 		}
 	}
 	

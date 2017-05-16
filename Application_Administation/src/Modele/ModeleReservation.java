@@ -21,7 +21,7 @@ public class ModeleReservation {
 		
 		try
 		{
-			BDD uneBDD = new BDD("mysql.hostinger.fr", "u587264972_rest", "u587264972_rest", "ProjetPPE_1/"); //nouvel objet connexion
+			BDD uneBDD = new BDD("localhost", "restline", "root", ""); //nouvel objet connexion
 			
 			uneBDD.seConnecter(); //connexion
 			
@@ -70,7 +70,7 @@ public class ModeleReservation {
 						 + "' where idReservation = " + idReservation + ";";
 		try
 		{
-			BDD uneBDD = new BDD("mysql.hostinger.fr", "u587264972_rest", "u587264972_rest", "ProjetPPE_1/");
+			BDD uneBDD = new BDD("localhost", "restline", "root", "");
 			uneBDD.seConnecter();
 			Statement unStat = uneBDD.getMaconnexion().createStatement();
 			unStat.execute(requete);
@@ -89,7 +89,7 @@ public class ModeleReservation {
 		
 		try
 		{
-			BDD uneBDD = new BDD("mysql.hostinger.fr", "u587264972_rest", "u587264972_rest", "ProjetPPE_1/");
+			BDD uneBDD = new BDD("localhost", "restline", "root", "");
 			uneBDD.seConnecter();
 			Statement unStat = uneBDD.getMaconnexion().createStatement();
 			unStat.execute(requete);

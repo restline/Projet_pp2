@@ -18,7 +18,7 @@ public class Modele {
 		
 		try
 		{
-			BDD uneBDD = new BDD("mysql.hostinger.fr", "u587264972_rest", "u587264972_rest", "ProjetPPE_1/");
+			BDD uneBDD = new BDD("localhost", "restline", "root", "");
 			uneBDD.seConnecter();
 			Statement unStat = uneBDD.getMaconnexion().createStatement(); //créer une instance connexion
 			ResultSet unRes = unStat.executeQuery(requete); //éxécute requête
@@ -61,7 +61,7 @@ public class Modele {
 		
 		try
 		{
-			BDD uneBDD = new BDD("mysql.hostinger.fr", "u587264972_rest", "u587264972_rest", "ProjetPPE_1/");
+			BDD uneBDD = new BDD("localhost", "restline", "root", "");
 			uneBDD.seConnecter();
 			Statement unStat = uneBDD.getMaconnexion().createStatement();
 			unStat.execute(requete);
@@ -81,7 +81,7 @@ public class Modele {
 		
 		try
 		{
-			BDD uneBDD = new BDD("mysql.hostinger.fr", "u587264972_rest", "u587264972_rest", "ProjetPPE_1/");
+			BDD uneBDD = new BDD("localhost", "restline", "root", "");
 			uneBDD.seConnecter();
 			Statement unStat = uneBDD.getMaconnexion().createStatement();
 			unStat.execute(requete);
@@ -96,13 +96,14 @@ public class Modele {
 	public static Profil selectWhere(String email,  String Mdp)
 	{
 		String requete = "select * "
-						+" from user "
-						+" where email = '"+ email + "' "
-						+" and mdp = '" + Mdp + "'";
+						+"from user "
+						+"where email = '"+ email + "' "
+						+"and mdp = '" + Mdp + "'";
+		
 		Profil unProfil = null;
 		try
 		{
-			BDD uneBDD = new BDD("mysql.hostinger.fr", "u587264972_rest", "u587264972_rest", "ProjetPPE_1/");
+			BDD uneBDD = new BDD("localhost", "restline", "root", "");
 			uneBDD.seConnecter();
 			Statement unStat = uneBDD.getMaconnexion().createStatement();
 			ResultSet unRes = unStat.executeQuery(requete);
