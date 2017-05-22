@@ -150,8 +150,8 @@ class Connexion extends AsyncTask<Profil, Void, Profil> /* <entree, en cour d'ex
             //on fixe la methode d'envoi /reception de la methode
             maConnexion.setRequestMethod("GET");
             //on fixe le temps de connexion de reponse
-            maConnexion.setReadTimeout(45000); //en ms
-            maConnexion.setConnectTimeout(50000); //en ms
+            maConnexion.setReadTimeout(10000); //en ms
+            maConnexion.setConnectTimeout(25000); //en ms
             //on fixe la possibilité d'envoi et réception des données
             maConnexion.setDoInput(true);
             maConnexion.setDoOutput(true);
@@ -183,13 +183,17 @@ class Connexion extends AsyncTask<Profil, Void, Profil> /* <entree, en cour d'ex
                 sb.append(ligne); //lecture ligne par ligne
             }
             is.close();
+            br.close();
+
             resultat = sb.toString(); //recuperer le tout dans la chaine resultat
             //on affiche le resultat en log
             Log.e("resultat :", resultat );
+
         }
         catch(IOException exp)
         {
             exp.printStackTrace();
+
         }
         try
         {

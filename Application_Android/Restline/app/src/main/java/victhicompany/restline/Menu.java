@@ -1,10 +1,13 @@
 package victhicompany.restline;
 
+import android.graphics.Color;
 import android.net.Uri;
 import android.os.AsyncTask;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.Gravity;
+import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
@@ -56,7 +59,22 @@ public class Menu extends AppCompatActivity {
                                       //éxécution d'une connexion pour récupérer l'id en paramètre
                                       uneConnexion.execute(idClient);
                                       //instation d'un array
-                                      ArrayAdapter unAdapter = new ArrayAdapter(Menu.this, android.R.layout.simple_list_item_1, lesReservations);
+                                      ArrayAdapter unAdapter = new ArrayAdapter(Menu.this,android.R.layout.simple_list_item_1, android.R.id.text1, lesReservations)
+                                      {
+                                          //méthode unique pour effectuer des changements sur le ListView
+                                          @Override
+                                          public View getView(int position, View convertView, ViewGroup parent){
+
+                                              View view = super.getView(position, convertView, parent); //création du view et héritage du getview
+
+                                              TextView ListItemShow = (TextView) view.findViewById(android.R.id.text1); //création du textview en l'associant au view
+
+                                              ListItemShow.setTextColor(Color.parseColor("#FFFFFF")); //définition de la couleur du text dans le ListView
+                                              ListItemShow.setGravity(Gravity.CENTER); //centrer le texte dans le listView
+
+                                              return view;
+                                          }
+                                      };
                                       //éxécution des données dans le listeView
                                       lvListe.setAdapter(unAdapter);
                                   }
@@ -99,8 +117,8 @@ class ConnexionCMD extends AsyncTask<String, Void, ArrayList<String>> /* <entree
             //on fixe la methode d'envoi /reception de la methode
             maConnexion.setRequestMethod("GET");
             //on fixe le temps de connexion de reponse
-            maConnexion.setReadTimeout(5000); //en ms
-            maConnexion.setConnectTimeout(10000); //en ms
+            maConnexion.setReadTimeout(1000); //en ms
+            maConnexion.setConnectTimeout(5000); //en ms
             //on fixe la possibilité d'envoi et réception des données
             maConnexion.setDoInput(true);
             maConnexion.setDoOutput(true);
@@ -131,6 +149,7 @@ class ConnexionCMD extends AsyncTask<String, Void, ArrayList<String>> /* <entree
                 sb.append(ligne); //lecture ligne par ligne
             }
             is.close();
+            br.close();
             resultat = sb.toString(); //recuperer le tout dans la chaine resultat
             //on affiche le resultat en log
             Log.e("resultat :", resultat );

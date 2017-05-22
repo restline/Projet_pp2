@@ -33,6 +33,7 @@ public class Accueil extends AppCompatActivity implements View.OnClickListener{
 
         //Bouton cliquable
         this.uneResa.setOnClickListener(this);
+
     }
 
     @Override
